@@ -1,49 +1,87 @@
+# Shell scripts
 
-<h1 align="center">
-  <br>
-  <img src="simple-logo.png" alt="simple-logo" width="200">
-  <br>
-  Bunch of Scripts
-  <br>
-</h1>
-
-<h4 align="center"> A bunch of script to help me manage my linux machines </h4>
+## Collection of bash scripts used for housekeeping and other tasks
 
 <p align="center">
-  <a href="https://paypal.me/izy225?country">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
+  <img src="mascot.gif" alt="Mascot" height="250px">
 </p>
 
-## How to use it
+ ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge) 
+ ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+ ![YAML](https://img.shields.io/badge/yaml-%23ffffff.svg?style=for-the-badge&logo=yaml&logoColor=151515)
+ ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+ ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+ ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white) 
+ [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
 
-```bash
-# Clone this repository
-$ git clone https://github.com/Izy-Stack/Bash-Scripts
-
-# Go into the repository
-$ cd Bash-Scripts/
-
-# Make sure the scripts are executable
-$ chmod +x (script-name.sh)
-
-# Run the updates
-$ ./(script-name.sh)
-```
-
-The real power of script like these is the ability to add them to <a href="https://infinitbility.com/crontab-documentation">crontab</a> or similar services 
-
-
-
-## You may also like...
-
-- [Leetcode-serving-alarm](https://github.com/Izy-stack/LT-serving-alarm) - The Dojo Alarm
-- [80s-themed-surveillance-web-portal](https://github.com/Izy-stack/80s-themed-surveillance-portal) - A web portal to serve live footage from camera
-
+💻 *Automation for power users*
 
 ---
 
-> GitHub [@Izy-stack](https://github.com/Izy-stack) &nbsp;&middot;&nbsp;
-> Twitter [@isaackm225](https://twitter.com/isaackm225)
+## 📜 Description
 
+Automating tasks like backups, updates etc...
 
+---
+
+## ⚙️ Installation
+
+First Clone the repository:
+
+```bash
+git clone https://github.com/skillz4real/sh-scripts
+cd sh-scripts
+```
+
+Then add executable permissions:
+```bash
+chmod +x arch-housekeeping.sh
+chmod +x debian-updates.sh
+chmod +x rsync-backup.sh
+```
+
+Finally, Consider adding relevant commands to crontab. Each script logs to a "./log.txt" file but I also include logging in all of my crontab jobs
+
+```bash
+# crontab example for debian-bases systems
+0 1 * * * echo "running debian update script at $(date)" && cd $HOME/sh-scripts/ && /bin/sh $HOME/sh-scripts/debian-updates.sh >> $HOME/crontab.log 2>&1
+0 0 1 * * echo "running debian backups on $(date)" && cd $HOME/z/sh-scripts/ && ./rsync-backup.sh >> $HOME/crontab.log 2>&1 
+
+# for arch based systems replace first job with this line
+0 1 * * * echo "running arch update script at $(date)" && cd $HOME/sh-scripts/ && ./arch-housekeeping.sh >> $HOME/crontab.log 2>&1
+```
+
+## 🌟 Features
+
+- Support for debian and arch systems
+- Updates and backups
+  
+---
+
+## 📚 Educational Resources
+
+I am not an expert, I am still learning, here are the resources I use and my profiles:
+
+<!--- [Hack The Box](https://app.hackthebox.com/profile/1776662)-->
+<!--- [Try Hack Me](https://tryhackme.com/p/skillz4real)-->
+<!--- [Leet Code](https://leetcode.com/skillz4real/)-->
+
+---
+
+## 👨‍💻 Youtube
+
+<!-- Youtube -->
+
+---
+
+## 📄 License
+
+sh-scripts is released under the [GNU LICENSE](LICENSE).
+
+---
+
+## 📞 Support
+
+For support, feature requests, or bug reports, please file an issue in the [GitHub issue tracker](https://github.com/skillz4real/sh-scripts/issues).
+
+---
